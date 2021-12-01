@@ -3,13 +3,13 @@ package hw10;
 import java.util.Objects;
 
 public class Book {
-    private String bookName;
-    private String authorName;
+    private final String bookName;
+    private final Author author;
     private int bookYear;
 
-    public Book(String bookName, String authorName, int bookYear) {
+    public Book(String bookName, Author author, int bookYear) {
         this.bookName = bookName;
-        this.authorName = authorName;
+        this.author = author;
         this.bookYear = bookYear;
     }
 
@@ -18,7 +18,7 @@ public class Book {
     }
 
     public String getAuthorName() {
-        return authorName;
+        return author.getAuthorFirstName() + " " + author.getAuthorLastName();
     }
 
     public String getBookName() {
@@ -34,19 +34,19 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return bookYear == book.bookYear && bookName.equals(book.bookName) && Objects.equals(authorName, book.authorName);
+        return bookYear == book.bookYear && bookName.equals(book.bookName) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName, authorName, bookYear);
+        return Objects.hash(bookName, author, bookYear);
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "bookName='" + bookName + '\'' +
-                ", authorName='" + authorName + '\'' +
+                ", author=" + author +
                 ", bookYear=" + bookYear +
                 '}';
     }

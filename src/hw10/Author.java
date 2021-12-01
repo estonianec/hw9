@@ -3,8 +3,8 @@ package hw10;
 import java.util.Objects;
 
 public class Author {
-    private String authorFirstName;
-    private String authorLastName;
+    private final String authorFirstName;
+    private final String authorLastName;
 
     public Author(String authorFirstName, String authorLastName) {
         this.authorFirstName = authorFirstName;
