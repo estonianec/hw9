@@ -1,13 +1,13 @@
 package com.company;
 
 public class Book {
-    private String bookName;
-    private String authorName;
+    private final String bookName;
+    private final Author author;
     private int bookYear;
 
-    public Book(String bookName, String authorName, int bookYear) {
+    public Book(String bookName, Author author, int bookYear) {
         this.bookName = bookName;
-        this.authorName = authorName;
+        this.author = author;
         this.bookYear = bookYear;
     }
 
@@ -15,8 +15,10 @@ public class Book {
         return bookYear;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public Author getAuthor() { return author;}
+
+    public String getAuthorFullName() {
+        return author.getAuthorFirstName() + " " + author.getAuthorLastName();
     }
 
     public String getBookName() {
@@ -25,6 +27,15 @@ public class Book {
 
     public void setBookYear(int bookYear) {
         this.bookYear = bookYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", author=" + author +
+                ", bookYear=" + bookYear +
+                '}';
     }
 }
 

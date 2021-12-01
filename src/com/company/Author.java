@@ -1,8 +1,8 @@
 package com.company;
 
 public class Author {
-    private String authorFirstName;
-    private String authorLastName;
+    private final String authorFirstName;
+    private final String authorLastName;
 
     public Author(String authorFirstName, String authorLastName) {
         this.authorFirstName = authorFirstName;
@@ -15,5 +15,13 @@ public class Author {
 
     public String getAuthorLastName() {
         return authorLastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorFirstName='" + authorFirstName + '\'' +
+                ", authorLastName='" + authorLastName + '\'' +
+                '}';
     }
 }
